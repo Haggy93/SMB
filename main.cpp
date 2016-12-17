@@ -16,6 +16,10 @@ int main()
     else
     {
 		LCDinit(lcd);
+		
+		int x = piThreadCreate(myThread);
+		
+		
 		LCDclear(lcd, BOTH_LINES);
 		LCDsetCursor(lcd, 0, FIRST_LINE);
 		LCDwrite(lcd, "VERSION 1.5");
@@ -32,4 +36,9 @@ int main()
 			}
 		}
 	}
+}
+
+PI_THREAD (myThread)
+{
+	cout<<"bla bla bla"<<endl;
 }
