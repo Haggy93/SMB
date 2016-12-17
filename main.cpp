@@ -31,5 +31,6 @@ int main()
 				deleteAllSMS();
 			}
 		}
+		cout<<"Bla bla bla"<<endl;
 	}
 }
