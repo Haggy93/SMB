@@ -16,7 +16,7 @@ int main()
     else
     {
 		LCDinit(lcd);
-		LCDclear(lcd, BOTH_LINES)
+		LCDclear(lcd, BOTH_LINES);
 		LCDsetCursor(lcd, 0, FIRST_LINE);
 		LCDwrite(lcd, "VERSION 1.5");
 		while(1)
