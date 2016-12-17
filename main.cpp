@@ -4,18 +4,21 @@
 
 PI_THREAD (myThread)
 {
-	/*
-	int TX_pin = 15;
-	if ( wiringPiISR(TX_pin, INT_EDGE_RISING,  == 1 )
+	while(1)
 	{
-		cout<<"Przyszła wiadomosc"<<endl;
+		delay(1000);
+		cout<<"T"<<endl;
 	}
-	*/
 }
 
-void mySMS()
+void myRX(void)
 {
-	cout<<"Przyszla wiadomosc"<<endl;
+	cout<<"Sygnal RX"<<endl;
+}
+
+void myTX(void)
+{
+	cout<<"Sygnal TX"<<endl;
 }
 
 int main()
@@ -23,10 +26,14 @@ int main()
 	cout<<"Version : "<<VERSION<<endl;
 	wiringPiSetup ();
 	
+	cout<<"Rabbit 1"<<endl;
 	GSMinit();
-		int TX_pin = 16;
-	wiringPiISR(TX_pin, INT_EDGE_RISING, &mySMS);
-	
+	int TX_pin = 15;
+	wiringPiISR(TX_pin, INT_EDGE_BOTH , &myRX);
+	cout<<"Rabbit 2"<<endl;
+	int RX_pin = 16;
+	wiringPiISR(TX_pin, INT_EDGE_BOTH , &myTX);
+	cout<<"Rabbit 3"<<endl;
 	
 	
 	int lcd = wiringPiI2CSetup(LCD_Address);
