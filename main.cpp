@@ -24,7 +24,7 @@ int main()
 	wiringPiSetup ();
 	
 	GSMinit();
-		int TX_pin = 15;
+		int TX_pin = 16;
 	wiringPiISR(TX_pin, INT_EDGE_RISING, &mySMS);
 	
 	
