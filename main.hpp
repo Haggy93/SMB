@@ -15,6 +15,3 @@
 
 using namespace std;
 const char LCD_Address = 0x27;
-
-void myTX(void);
-void myRX(void);
