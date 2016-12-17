@@ -2,6 +2,11 @@
 
 #define VERSION 1.5
 
+PI_THREAD (myThread)
+{
+	cout<<"bla bla bla"<<endl;
+}
+
 int main()
 {
 	cout<<"Version : "<<VERSION<<endl;
@@ -13,12 +18,14 @@ int main()
     {
         cout << "Communication with LCD broken!" << endl;
     }
+	
+	
+	
     else
     {
 		LCDinit(lcd);
 		
-		int x = piThreadCreate('myThread');
-		
+		int x = piThreadCreate(myThread);
 		
 		LCDclear(lcd, BOTH_LINES);
 		LCDsetCursor(lcd, 0, FIRST_LINE);
@@ -36,9 +43,4 @@ int main()
 			}
 		}
 	}
-}
-
-PI_THREAD (myThread)
-{
-	cout<<"bla bla bla"<<endl;
 }
