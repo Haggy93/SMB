@@ -4,7 +4,10 @@
 
 PI_THREAD (myThread)
 {
-	cout<<"bla bla bla"<<endl;
+	for (int i = 0 ; i < 20 ; i ++)
+	{
+		cout<<i<<endl;
+	}
 }
 
 int main()
@@ -26,6 +29,14 @@ int main()
 		LCDinit(lcd);
 		
 		int x = piThreadCreate(myThread);
+		if (x != 0)
+		{
+			cout<<"Thread doesnt work."<<endl;
+		}
+		else
+		{
+			cout<<"myThread starts."<<endl;
+		}
 		
 		LCDclear(lcd, BOTH_LINES);
 		LCDsetCursor(lcd, 0, FIRST_LINE);
