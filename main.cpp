@@ -16,17 +16,17 @@ int main()
     else
     {
 		LCDinit(lcd);
-		LCDclear(lcd, 0);
-		LCDsetCursor(lcd, 0, 1);
+		LCDclear(lcd, BOTH_LINES)
+		LCDsetCursor(lcd, 0, FIRST_LINE);
 		LCDwrite(lcd, "VERSION 1.5");
 		while(1)
 		{
 			if(GSMhowManySMS() != 0)
 			{
-				LCDclear(lcd, 0);
-				LCDsetCursor(lcd, 0, 1);
+				LCDclear(lcd, BOTH_LINES);
+				LCDsetCursor(lcd, 0, FIRST_LINE);
 				LCDwrite(lcd, GSMgetNumber(GSMreadSMS(1)));
-				LCDsetCursor(lcd, 0, 2);
+				LCDsetCursor(lcd, 0, SECOND_LINE);
 				LCDwrite(lcd, GSMgetMessage(GSMreadSMS(1)));
 				deleteAllSMS();
 			}
