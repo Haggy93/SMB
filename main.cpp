@@ -4,11 +4,18 @@
 
 PI_THREAD (myThread)
 {
+	/*
 	int TX_pin = 15;
-	if ( waitForInterrupt(TX_pin, -1) == 1 )
+	if ( wiringPiISR(TX_pin, INT_EDGE_RISING,  == 1 )
 	{
 		cout<<"Przyszła wiadomosc"<<endl;
 	}
+	*/
+}
+
+void mySMS()
+{
+	cout<<"Przyszla wiadomosc"<<endl;
 }
 
 int main()
@@ -17,6 +24,10 @@ int main()
 	wiringPiSetup ();
 	
 	GSMinit();
+	wiringPiISR(TX_pin, INT_EDGE_RISING, &mySMS);
+	
+	int TX_pin = 15;
+	
 	
 	int lcd = wiringPiI2CSetup(LCD_Address);
 	if (lcd == -1)   
