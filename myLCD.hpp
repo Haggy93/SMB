@@ -11,7 +11,7 @@
 #include <wiringPi.h>
 #include <wiringPiI2C.h>
 
-#define LCD_DELAY 1000
+#define LCD_DELAY 100
 #define LCD_LINE_LENGTH 40
 
 #define FIRST_LINE 1
