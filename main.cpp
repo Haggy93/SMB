@@ -17,7 +17,7 @@ int main()
     {
 		LCDinit(lcd);
 		
-		int x = piThreadCreate(myThread);
+		int x = piThreadCreate('myThread');
 		
 		
 		LCDclear(lcd, BOTH_LINES);
