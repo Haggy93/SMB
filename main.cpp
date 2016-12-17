@@ -50,6 +50,7 @@ int main()
 		
 	while(1)
 	{
-		/*main loop*/
+		delay(1000);
+		cout<<"a"<<endl;
 	}
 }
