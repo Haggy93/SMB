@@ -23,10 +23,6 @@ int main()
     {
         cout << "Communication with LCD broken!" << endl;
     }
-	
-	int TX_pin = 15;
-	waitForInterrupt(TX_pin, -1);
-	
     else
     {
 		LCDinit(lcd);
