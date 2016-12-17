@@ -2,7 +2,7 @@
 
 #define VERSION 1.5
 
-PI_THREAD (pager)
+PI_THREAD (myThread)
 {
 	int lcd = wiringPiI2CSetup(LCD_Address);
 	if (lcd == -1)   
@@ -38,8 +38,8 @@ int main()
 	wiringPiSetup ();
 	GSMinit();
 	
-	int pager_status = piThreadCreate(pager);
-	if (pager_status != 0)
+	int x = piThreadCreate(myThread);
+	if (x != 0)
 	{
 		cout<<"Thread doesnt work."<<endl;
 	}
