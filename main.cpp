@@ -24,14 +24,26 @@ void myTX(void)
 int main()
 {
 	cout<<"Version : "<<VERSION<<endl;
+	
+			int x = piThreadCreate(myThread);
+		if (x != 0)
+		{
+			cout<<"Thread doesnt work."<<endl;
+		}
+		else
+		{
+			cout<<"myThread starts."<<endl;
+		}
+		
+		
 	wiringPiSetup ();
 	
 	cout<<"Rabbit 1"<<endl;
 	GSMinit();
-	int TX_pin = 15;
+	int TX_pin = 16;
 	wiringPiISR(TX_pin, INT_EDGE_BOTH , &myRX);
 	cout<<"Rabbit 2"<<endl;
-	int RX_pin = 16;
+	int RX_pin = 15;
 	wiringPiISR(TX_pin, INT_EDGE_BOTH , &myTX);
 	cout<<"Rabbit 3"<<endl;
 	
@@ -44,16 +56,6 @@ int main()
     else
     {
 		LCDinit(lcd);
-		
-		int x = piThreadCreate(myThread);
-		if (x != 0)
-		{
-			cout<<"Thread doesnt work."<<endl;
-		}
-		else
-		{
-			cout<<"myThread starts."<<endl;
-		}
 		
 		LCDclear(lcd, BOTH_LINES);
 		LCDsetCursor(lcd, 0, FIRST_LINE);
