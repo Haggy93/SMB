@@ -35,7 +35,7 @@ int main()
 {
 	cout<<"Version : "<<VERSION<<endl;
 			
-	wiringPiSetup ();
+	wiringPiSetup();
 	GSMinit();
 	
 	int x = piThreadCreate(myThread);
