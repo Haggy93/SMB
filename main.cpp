@@ -24,9 +24,9 @@ int main()
 	wiringPiSetup ();
 	
 	GSMinit();
+		int TX_pin = 15;
 	wiringPiISR(TX_pin, INT_EDGE_RISING, &mySMS);
 	
-	int TX_pin = 15;
 	
 	
 	int lcd = wiringPiI2CSetup(LCD_Address);
