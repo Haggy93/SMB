@@ -14,6 +14,10 @@
 #define LCD_DELAY 1000
 #define LCD_LINE_LENGTH 40
 
+#define FIRST_LINE 1
+#define SECOND_LINE 2
+#define BOTH_LINES 0
+
 using namespace std;
 
 void LCDsetE(char & data);

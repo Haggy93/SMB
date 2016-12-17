@@ -110,7 +110,7 @@ void LCDwrite(int device, string data)
 void LCDsetCursor(int device, char position /*0-39*/, char line)
 {
 	char buff;
-	if (line == 1)
+	if (line == FIRST_LINE )
 	{
 		buff = 0 + position;
 		if (buff < 0x00) // first address of DDram in line 0
@@ -125,7 +125,7 @@ void LCDsetCursor(int device, char position /*0-39*/, char line)
 		LCDsendBit(device, 0, 0, buff);
 
 	}
-	else if (line == 2)
+	else if (line == SECOND_LINE )
 	{
 		buff = 0x40 + position;
 		if (buff < 0x40) // first address of DDram in  line 1
@@ -147,7 +147,7 @@ void LCDsetCursor(int device, char position /*0-39*/, char line)
 
 void LCDclear(int device, char line)
 {
-	if (line == 0) // clear both lines
+	if (line == BOTH_LINES ) // clear both lines
 	{
 		for (int i  = 1 ; i < 3 ; i++)
 		{
@@ -158,7 +158,7 @@ void LCDclear(int device, char line)
 			}
 		}
 	}
-	else if (line == 1) // clear first line
+	else if (line == FIRST_LINE ) // clear first line
 	{
 		LCDsetCursor( device, 0, (char)(line) );
 		for (int i = 0 ; i < LCD_LINE_LENGTH ; i++)
@@ -166,7 +166,7 @@ void LCDclear(int device, char line)
 			LCDwrite(device, " ");
 		}
 	}
-	else if (line == 2) // clear second line
+	else if (line == SECOND_LINE ) // clear second line
 	{
 		LCDsetCursor( device, 0, (char)(line) );
 		for (int i = 0 ; i < LCD_LINE_LENGTH ; i++)
