@@ -4,15 +4,17 @@
 
 PI_THREAD (myThread)
 {
-	for (int i = 0 ; i < 20 ; i ++)
+	int TX_pin = 15;
+	if ( waitForInterrupt(TX_pin, -1) == 1 )
 	{
-		cout<<i<<endl;
+		cout<<"Przyszła wiadomosc"<<endl;
 	}
 }
 
 int main()
 {
 	cout<<"Version : "<<VERSION<<endl;
+	wiringPiSetup ();
 	
 	GSMinit();
 	
@@ -22,7 +24,8 @@ int main()
         cout << "Communication with LCD broken!" << endl;
     }
 	
-	
+	int TX_pin = 15;
+	waitForInterrupt(TX_pin, -1);
 	
     else
     {
@@ -43,6 +46,7 @@ int main()
 		LCDwrite(lcd, "VERSION 1.5");
 		while(1)
 		{
+			/*
 			if(GSMhowManySMS() != 0)
 			{
 				LCDclear(lcd, BOTH_LINES);
@@ -52,6 +56,7 @@ int main()
 				LCDwrite(lcd, GSMgetMessage(GSMreadSMS(1)));
 				deleteAllSMS();
 			}
+			*/
 		}
 	}
 }
