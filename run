@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo git pull
+sudo cmake .
+make
+sudo ./main
