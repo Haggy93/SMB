@@ -15,8 +15,7 @@ PI_THREAD (CheckSMS)
 		LCDclear(lcd, BOTH_LINES);
 		LCDsetCursor(lcd, 0, FIRST_LINE);
 		
-		string myVersion = "Version" + VERSION;
-		LCDwrite(lcd, myVersion);
+		LCDwrite(lcd, "Waiting for first SMS...");
 		
 		while(1)
 		{
