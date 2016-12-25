@@ -12,8 +12,7 @@
 #include <wiringPi.h>
 #include <wiringPiI2C.h>
 #include <wiringSerial.h>
+#include <wiringPiSPI.h>
 
 using namespace std;
 const char LCD_Address = 0x27;
-
-void startSMSThread();
