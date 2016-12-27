@@ -11,7 +11,7 @@ int main()
 	cout<<"Program : SPI test" <<endl;
 	cout<<"SPI init result : " << wiringPiSPISetup(SPIchannel, SPIspeed)<<endl;
 			
-	unsigned char myData[2];
+	unsigned char buff[2];
 	
 	cout<<"Start work..."<<endl;
 	
