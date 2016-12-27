@@ -11,7 +11,7 @@ int main()
 			
 	wiringPiSetup();
 	
-	unsigned char SPIdata = 0xF0;
+	unsigned char SPIdata[3] = {0xF0 , 0xAA, 0xFF};
 	
 	wiringPiSPISetup(SPIchannel, SPIspeed);
 		
@@ -19,6 +19,6 @@ int main()
 	{
 		delay(1000);
 		cout<<"Working..."<<endl;
-		wiringPiSPIDataRW(SPIchannel, &SPIdata, 1);
+		wiringPiSPIDataRW(SPIchannel, SPIdata, 3);
 	}
 }
