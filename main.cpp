@@ -8,15 +8,12 @@ static const unsigned char SPIdataSize = 4;
 
 int main()
 {
-	//wiringPiSetupPhys();
-	wiringPiSetupGpio();
+	wiringPiSetupPhys();
 	cout<<"Version : "<<VERSION<<endl;
 	cout<<"Program : SPI test" <<endl;
 	cout<<"SPI init result : " << wiringPiSPISetup(SPIchannel, SPIspeed)<<endl;
 			
-	unsigned char SPIdata[4]= {0x00, 0x10, 0x20, 0xff};
-	
-	unsigned char myBuff = 0b01010101;
+	unsigned char SPIdata[SPIdataSize]= {0x00, 0x10, 0x20, 0xff};
 	
 	cout<<"Start work..."<<endl;
 	
@@ -24,7 +21,7 @@ int main()
 	while(1)
 	{
 		delay(500);
-		SPIresult = wiringPiSPIDataRW(SPIchannel, &myBuff , 1);
+		SPIresult = wiringPiSPIDataRW(SPIchannel, SPIdata , SPIdataSize);
 		cout<<"Write result : "<< SPIresult <<endl;
 	}
 }
