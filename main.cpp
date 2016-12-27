@@ -13,7 +13,7 @@ int main()
 			
 	wiringPiSetup();
 	
-	uint8_t SPIdata[SPIdataSize] = {'W', 'o' ,'R' , 'k'};
+	uint8_t SPIdata[SPIdataSize] = {'A', 'D' ,'A' , 'M'};
 	
 	if ( wiringPiSPISetup(SPIchannel, SPIspeed) < 0)
 	{
@@ -21,10 +21,10 @@ int main()
 	}
 	else
 	{
+		out<<"Working..."<<endl;
 		while(1)
 		{
 			delay(500);
-			cout<<"Working..."<<endl;
 			wiringPiSPIDataRW(SPIchannel, SPIdata, SPIdataSize);
 		}
 	}
