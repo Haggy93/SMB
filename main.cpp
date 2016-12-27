@@ -4,7 +4,7 @@
 #define SPIchannel 0
 #define SPIspeed 1000000
 
-const unsigned char SPIdataSize = 4;
+const unsigned char SPIdataSize = 1;
 
 int main()
 {
@@ -13,7 +13,7 @@ int main()
 			
 	wiringPiSetup();
 	
-	uint8_t SPIdata[SPIdataSize] = {'A', 'D' ,'A' , 'M'};
+	uint8_t SPIdata= 250;
 	
 	if ( wiringPiSPISetup(SPIchannel, SPIspeed) < 0)
 	{
@@ -25,7 +25,7 @@ int main()
 		while(1)
 		{
 			delay(500);
-			wiringPiSPIDataRW(SPIchannel, SPIdata, SPIdataSize);
+			wiringPiSPIDataRW(SPIchannel, &SPIdata, SPIdataSize);
 		}
 	}
 }
