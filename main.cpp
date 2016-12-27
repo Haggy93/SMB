@@ -13,7 +13,7 @@ int main()
 	cout<<"Program : SPI test" <<endl;
 	cout<<"SPI init result : " << wiringPiSPISetup(SPIchannel, SPIspeed)<<endl;
 			
-	unsigned char SPIdata[SPIdataSize]= {'a','n','k','a'};
+	unsigned char SPIdata[SPIdataSize]= {'A','N','K','A'};
 	
 	cout<<"Start work..."<<endl;
 	
