@@ -1,10 +1,10 @@
 #include "main.hpp"
 
-#define VERSION 1.0
+#define VERSION 1.2
 #define SPIchannel 0
 #define SPIspeed 500000
 
-const unsigned char SPIdataSize = 1;
+const unsigned char SPIdataSize = 4;
 
 int main()
 {
@@ -13,9 +13,10 @@ int main()
 			
 	wiringPiSetup();
 	
-	uint8_t SPIdata= 70;
+	uint8_t SPIdata= {'a','n','k','a'};
 	
 	cout<<"Working..."<<endl;
+	
 	while(1)
 	{
 		delay(500);
