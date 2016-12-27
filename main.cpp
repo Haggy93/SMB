@@ -11,7 +11,7 @@ int main()
 	wiringPiSetup();
 	cout<<"Version : "<<VERSION<<endl;
 	cout<<"Program : SPI test" <<endl;
-	cout<<"SPI init result :" << wiringPiSPISetup(SPIchannel, SPIspeed);
+	cout<<"SPI init result :" << wiringPiSPISetup(SPIchannel, SPIspeed)<<endl;
 			
 	unsigned char SPIdata[SPIdataSize]= {'a','n','k','a'};
 	
@@ -19,7 +19,7 @@ int main()
 	
 	while(1)
 	{
-		delay(500);
-		wiringPiSPIDataRW(SPIchannel, SPIdata, SPIdataSize);
+		delay(100);
+		wiringPiSPIDataRW(SPIchannel, SPIdata, 1);
 	}
 }
