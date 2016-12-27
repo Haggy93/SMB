@@ -21,6 +21,7 @@ int main()
 		delay(500);
 		if ( wiringPiSPISetup(SPIchannel, SPIspeed) < 0)
 		{
+			cout<<"Wysłano"<<endl;
 			wiringPiSPIDataRW(SPIchannel, &SPIdata, SPIdataSize);
 		}
 		else
