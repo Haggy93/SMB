@@ -13,7 +13,7 @@ int main()
 			
 	wiringPiSetup();
 	
-	uint8_t SPIdata[SPIdataSize] = {'A' , 'B', 'C', 'D'};
+	uint8_t SPIdata[SPIdataSize] = {12, 68 ,178 , 222};
 	
 	if ( wiringPiSPISetup(SPIchannel, SPIspeed) < 0)
 	{
