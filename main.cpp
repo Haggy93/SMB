@@ -27,7 +27,7 @@ int main()
 		else
 		{
 			cout<<"Wysłano"<<endl;
-			wiringPiSPIDataRW(SPIchannel, &SPIdata, SPIdataSize);
+			wiringPiSPIDataRW(SPIchannel, SPIdata, SPIdataSize);
 		}
 	}
 }
