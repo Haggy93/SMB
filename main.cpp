@@ -13,7 +13,7 @@ int main()
 			
 	wiringPiSetup();
 	
-	uint8_t SPIdata= 127;
+	uint8_t SPIdata= 64;
 	
 	if ( wiringPiSPISetup(SPIchannel, SPIspeed) < 0)
 	{
