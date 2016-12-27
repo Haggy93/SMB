@@ -49,43 +49,43 @@ int main()
 		
 		//Segment 1
 		buff[0] = 0x01; //Adres
-		buff[1] = 0x44;
+		buff[1] = 0x22;
 		SPIresult = wiringPiSPIDataRW(SPIchannel, buff , 2);
 		cout<<"Write result : "<< SPIresult <<endl;
 		
 		//Segment 2
 		buff[0] = 0x02; //Adres
-		buff[1] = 0x44;
+		buff[1] = 0x22;
 		SPIresult = wiringPiSPIDataRW(SPIchannel, buff , 2);
 		cout<<"Write result : "<< SPIresult <<endl;
 		
 		//Segment 3
 		buff[0] = 0x03; //Adres
-		buff[1] = 0xC7;
+		buff[1] = 0x3E;
 		SPIresult = wiringPiSPIDataRW(SPIchannel, buff , 2);
 		cout<<"Write result : "<< SPIresult <<endl;
 		
 		//Segment 4
 		buff[0] = 0x04; //Adres
-		buff[1] = 0xC7;
+		buff[1] = 0x3E;
 		SPIresult = wiringPiSPIDataRW(SPIchannel, buff , 2);
 		cout<<"Write result : "<< SPIresult <<endl;
 		
 		//Segment 5
 		buff[0] = 0x5; //Adres
-		buff[1] = 0x44;
+		buff[1] = 0x22;
 		SPIresult = wiringPiSPIDataRW(SPIchannel, buff , 2);
 		cout<<"Write result : "<< SPIresult <<endl;
 		
 		//Segment 6
 		buff[0] = 0x6; //Adres
-		buff[1] = 0x82;
+		buff[1] = 0x14;
 		SPIresult = wiringPiSPIDataRW(SPIchannel, buff , 2);
 		cout<<"Write result : "<< SPIresult <<endl;
 		
 		//Segment 7 
 		buff[0] = 0x07; //Adres
-		buff[1] = 0x01;
+		buff[1] = 0x08;
 		SPIresult = wiringPiSPIDataRW(SPIchannel, buff , 2);
 		cout<<"Write result : "<< SPIresult <<endl;
 		
