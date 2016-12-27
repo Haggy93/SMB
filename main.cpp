@@ -52,6 +52,8 @@ void LedMatrixInit(unsigned char myIntens)
 
 void LedMatrixSet(unsigned char *data)
 {
+	unsigned char buff[2];
+	
 	//Segment 1
 	buff[0] = 0x01; //Adres
 	buff[1] = data[0];
