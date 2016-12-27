@@ -17,9 +17,11 @@ int main()
 	
 	cout<<"Start work..."<<endl;
 	
+	int SPIresult = 0;
 	while(1)
 	{
-		delay(100);
-		wiringPiSPIDataRW(SPIchannel, SPIdata, SPIdataSize);
+		delay(500);
+		SPIresult = wiringPiSPIDataRW(SPIchannel, SPIdata, SPIdataSize);
+		cout<<"Write result : "<< SPIresult <<endl;
 	}
 }
