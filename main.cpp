@@ -15,13 +15,15 @@ int main()
 			
 	unsigned char SPIdata[4]= {0x00, 0x10, 0x20, 0xff};
 	
+	unsigned char myBuff = 0b01010101;
+	
 	cout<<"Start work..."<<endl;
 	
 	int SPIresult = 0;
 	while(1)
 	{
 		delay(500);
-		SPIresult = wiringPiSPIDataRW(SPIchannel, SPIdata, SPIdataSize);
+		SPIresult = wiringPiSPIDataRW(SPIchannel, &myBuff , 1);
 		cout<<"Write result : "<< SPIresult <<endl;
 	}
 }
