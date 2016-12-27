@@ -2,7 +2,9 @@
 
 #define VERSION 1.0
 #define SPIchannel 0
-#define SPIspeed 500000
+#define SPIspeed 1000000
+
+const unsigned char SPIdataSize = 4;
 
 int main()
 {
@@ -11,14 +13,19 @@ int main()
 			
 	wiringPiSetup();
 	
-	unsigned char SPIdata[3] = {0xF0 , 0xAA, 0xFF};
+	uint8_t SPIdata[SPIdataSize] = {'A' , 'B', 'C', 'D'};
 	
-	wiringPiSPISetup(SPIchannel, SPIspeed);
-		
-	while(1)
+	if ( wiringPiSPISetup(SPIchannel, SPIspeed) < 0)
 	{
-		delay(1000);
-		cout<<"Working..."<<endl;
-		wiringPiSPIDataRW(SPIchannel, SPIdata, 3);
+		cout<<"SPI fails...."<<endl;
+	}
+	else
+	{
+		while(1)
+		{
+			delay(1000);
+			cout<<"Working..."<<endl;
+			wiringPiSPIDataRW(SPIchannel, SPIdata, SPIdataSize);
+		}
 	}
 }
