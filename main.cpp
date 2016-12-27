@@ -2,7 +2,7 @@
 
 #define VERSION 1.4
 
-#define SPIspeed 2000000 /* Hz */
+#define SPIspeed 500000 /* Hz */
 #define SPIchannel 0
 
 int main()
