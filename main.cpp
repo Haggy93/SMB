@@ -21,7 +21,7 @@ int main()
 	}
 	else
 	{
-		out<<"Working..."<<endl;
+		cout<<"Working..."<<endl;
 		while(1)
 		{
 			delay(500);
