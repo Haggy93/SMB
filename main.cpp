@@ -21,12 +21,12 @@ int main()
 		delay(500);
 		if ( wiringPiSPISetup(SPIchannel, SPIspeed) < 0)
 		{
-			cout<<"Wysłano"<<endl;
-			wiringPiSPIDataRW(SPIchannel, &SPIdata, SPIdataSize);
+			cout<<"Nie wysłano"<<endl;
 		}
 		else
 		{
-			cout<<"Nie wysłano"<<endl;
+			cout<<"Wysłano"<<endl;
+			wiringPiSPIDataRW(SPIchannel, &SPIdata, SPIdataSize);
 		}
 	}
 }
