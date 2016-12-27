@@ -22,7 +22,7 @@ int main()
 		buff = 0x00;
 		for (int i = 0 ; i < 8 ; i++)
 		{
-			buff = buff | (myData << i);
+			buff = (buff | (myData << i));
 			SPIresult = wiringPiSPIDataRW(SPIchannel, &buff , 1);
 			cout<<"Write result : "<< SPIresult <<endl;
 		}
