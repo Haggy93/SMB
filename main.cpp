@@ -128,11 +128,11 @@ int main()
 	unsigned char picture[8] = { 0x13,
 									0xF3,
 									0x13,
-									0x50,
-									0x03,
-									0x51,
-									0x58,
-									0x51
+									0xF3,
+									0xF3,
+									0x13,
+									0xF3,
+									0x13
 									};
 	cout<<"Start work..."<<endl;
 	LedMatrixInit(0x02);
