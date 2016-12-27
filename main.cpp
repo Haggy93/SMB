@@ -17,6 +17,11 @@ int main()
 	
 	int SPIresult = 0;
 
+		//Normal operation (shutdown)
+		buff[0] = 0x01;
+		buff[1] = 0x0C;
+		SPIresult = wiringPiSPIDataRW(SPIchannel, buff , 2);
+		cout<<"Write result : "<< SPIresult <<endl;
 	
 		//No decode mode
 		buff[0] = 0x00;
@@ -39,12 +44,6 @@ int main()
 		//Normal operation (test)
 		buff[0] = 0x00;
 		buff[1] = 0x0F;
-		SPIresult = wiringPiSPIDataRW(SPIchannel, buff , 2);
-		cout<<"Write result : "<< SPIresult <<endl;
-		
-		//Normal operation (shutdown)
-		buff[0] = 0x01;
-		buff[1] = 0x0C;
 		SPIresult = wiringPiSPIDataRW(SPIchannel, buff , 2);
 		cout<<"Write result : "<< SPIresult <<endl;
 		
