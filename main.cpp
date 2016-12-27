@@ -29,8 +29,8 @@ int main()
 		SPIresult = wiringPiSPIDataRW(SPIchannel, buff , 2);
 		cout<<"Write result : "<< SPIresult <<endl;
 		
-		//Intensity 19/32
-		buff[1] = 0x09;
+		//Intensity 11/32
+		buff[1] = 0x05;
 		buff[0] = 0x0A;
 		SPIresult = wiringPiSPIDataRW(SPIchannel, buff , 2);
 		cout<<"Write result : "<< SPIresult <<endl;
