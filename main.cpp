@@ -11,7 +11,7 @@ int main()
 	cout<<"Program : SPI test" <<endl;
 	cout<<"SPI init result : " << wiringPiSPISetup(SPIchannel, SPIspeed)<<endl;
 			
-	unsigned char myData = 0x01;
+	unsigned char myData = 0xF0;
 	unsigned char buff;
 	
 	cout<<"Start work..."<<endl;
@@ -19,12 +19,12 @@ int main()
 	int SPIresult = 0;
 	while(1)
 	{
-		for (int i = 0 ; i < 8 ; i++)
-		{
-			buff = ~(myData << i);
-			SPIresult = wiringPiSPIDataRW(SPIchannel, &buff , 1);
-			cout<<"Write result : "<< SPIresult <<endl;
-		}
+		buff = 0xff;
+		SPIresult = wiringPiSPIDataRW(SPIchannel, &buff , 1);
+		cout<<"Write result : "<< SPIresult <<endl;
+		
+		SPIresult = wiringPiSPIDataRW(SPIchannel, &myData , 1);
+		cout<<"Write result : "<< SPIresult <<endl;
 		delay(500);
 	}
 }
