@@ -22,7 +22,6 @@ int main()
 		{
 			SPIresult = wiringPiSPIDataRW(SPIchannel, &(myData << i) , 1);
 			cout<<"Write result : "<< SPIresult <<endl;
-			(myData << i)
 		}
 		delay(500);
 	}
