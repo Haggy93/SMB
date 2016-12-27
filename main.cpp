@@ -13,7 +13,7 @@ int main()
 			
 	wiringPiSetup();
 	
-	uint8_t SPIdata= {'a','n','k','a'};
+	uint8_t SPIdata[SPIdataSize]= {'a','n','k','a'};
 	
 	cout<<"Working..."<<endl;
 	
