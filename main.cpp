@@ -8,7 +8,8 @@ static const unsigned char SPIdataSize = 4;
 
 int main()
 {
-	wiringPiSetupPhys();
+	//wiringPiSetupPhys();
+	wiringPiSetupGpio();
 	cout<<"Version : "<<VERSION<<endl;
 	cout<<"Program : SPI test" <<endl;
 	cout<<"SPI init result : " << wiringPiSPISetup(SPIchannel, SPIspeed)<<endl;
