@@ -163,6 +163,4 @@ int main()
 		LedMatrixSet(picture2);
 		delay(100);
 	}
-	
-	LedMatrixSet(picture);
 }
