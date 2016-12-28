@@ -8,6 +8,7 @@
 
 #include "myLCD.hpp"
 #include "myGSM.hpp"
+#include "myLedMatrix.hpp"
 
 #include <wiringPi.h>
 #include <wiringPiI2C.h>

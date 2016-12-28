@@ -3,6 +3,6 @@ project (SmartBuoy)
 
 add_definitions(-std=c++0x)
 
-add_executable(main main.cpp myLCD.cpp myGSM.cpp)
+add_executable(main main.cpp myLCD.cpp myGSM.cpp myLedMatrix.cpp)
 
 target_link_libraries(main wiringPi pthread)
