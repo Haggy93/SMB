@@ -1,6 +1,15 @@
 #ifndef myLedMatrix_hpp
 #define myLedMatrix_hpp
 
+#include <stdio.h>
+#include <sys/time.h>
+#include <unistd.h>
+#include <iostream>
+#include <string.h>
+
+#include <wiringPi.h>
+#include <wiringPiSPI.h>
+
 //Defines list
 #define Address_NoOp 0x00
 
