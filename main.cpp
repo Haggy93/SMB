@@ -10,8 +10,6 @@ int main()
 	cout<<"Version : "<<VERSION<<endl;
 	cout<<"Program : SPI test" <<endl;
 	cout<<"SPI init result : " << wiringPiSPISetup(SPIchannel, SPIspeed)<<endl;
-	
-	u
 			
 	unsigned char picture1[8] = { 0xAA, 0x01, 0xBC, 0x25, 0xA4, 0x3D, 0x80, 0x55 };
 	unsigned char picture2[8] = { 0x55, 0x80, 0x3D, 0xA4, 0x25, 0xBC, 0x01, 0xAA };
