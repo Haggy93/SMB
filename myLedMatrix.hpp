@@ -10,6 +10,9 @@
 #include <wiringPi.h>
 #include <wiringPiSPI.h>
 
+#define SPIspeed 500000 /* Hz */
+#define SPIchannel 0
+
 //Defines list
 #define Address_NoOp 0x00
 
