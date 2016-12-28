@@ -125,16 +125,44 @@ int main()
 	cout<<"Program : SPI test" <<endl;
 	cout<<"SPI init result : " << wiringPiSPISetup(SPIchannel, SPIspeed)<<endl;
 			
-	unsigned char picture[8] = { 0x13,
-									0xF3,
-									0x13,
-									0xF3,
-									0xF3,
-									0x13,
-									0xF3,
-									0x13
-									};
+	unsigned char picture1[8] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x18, 0x18 };
+	unsigned char picture2[8] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x18, 0x18, 0x00 };
+	unsigned char picture3[8] = { 0x00, 0x00, 0x00, 0x00, 0x18, 0x18, 0x00, 0x00 };
+	unsigned char picture4[8] = { 0x00, 0x00, 0x00, 0x18, 0x18, 0x00, 0x00, 0x00 };
+	unsigned char picture5[8] = { 0x00, 0x00, 0x18, 0x18, 0x00, 0x00, 0x00, 0x00 };
+	unsigned char picture6[8] = { 0x00, 0x18, 0x18, 0x00, 0x00, 0x00, 0x00, 0x00 };
+	unsigned char picture7[8] = { 0x18, 0x18, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+									
+									
 	cout<<"Start work..."<<endl;
 	LedMatrixInit(0x02);
+	while(1)
+	{
+		LedMatrixSet(picture1);
+		delay(100);
+		LedMatrixSet(picture2);
+		delay(100);
+		LedMatrixSet(picture3);
+		delay(100);
+		LedMatrixSet(picture4);
+		delay(100);
+		LedMatrixSet(picture5);
+		delay(100);
+		LedMatrixSet(picture6);
+		delay(100);
+		LedMatrixSet(picture7);
+		delay(100);
+		LedMatrixSet(picture6);
+		delay(100);
+		LedMatrixSet(picture5);
+		delay(100);
+		LedMatrixSet(picture4);
+		delay(100);
+		LedMatrixSet(picture3);
+		delay(100);
+		LedMatrixSet(picture2);
+		delay(100);
+	}
+	
 	LedMatrixSet(picture);
 }
